@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this system, please cite it and acknowledge it as required by LICENSE.md."
+authors:
+  - family-names: Malikian
+    given-names: Raphael
+    orcid: https://orcid.org/0009-0008-4326-4205
+    email: rtmalikian@gmail.com
+title: "Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission"
+version: 1.0.0
+date-released: 2026-11-05
+url: https://github.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research
+license: LicenseRef-Malikian-Attribution-NonCommercial-1.0
+keywords:
+  - peer review
+  - multi-agent
+  - ai peer review
+  - llm
+  - clinical ai
+  - medical research
+  - manuscript review
+  - research integrity
+  - reproducibility
+  - preprint
