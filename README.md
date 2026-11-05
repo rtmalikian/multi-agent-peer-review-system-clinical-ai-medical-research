@@ -100,11 +100,16 @@ The protocol's review checklist, applied in full by the panel between them, cove
 
 In the weekly research publication series this system was built for, the gates sit **between the finished draft and every external step**. No Zenodo deposit, no journal submission, no arXiv posting and no conference abstract leaves until the Gate 6 sign-off is logged in the paper's own folder, alongside the reviews, the response matrix and the panel assignment sheet. The peer review record for each paper is kept with the paper, and the manuscript's declarations carry a short, honest statement that the draft received multi-agent pre-submission peer review under this protocol, with the human author accountable for the final text.
 
+## Is persona diversity actually better? The test
+
+Honest answer: not yet tested. The claim that varied personas beat repeated reviews from one persona is this system's central hypothesis, and a public comment on launch day put the right challenge: papers with seeded errors, the same model, the same budget, a persona panel against one persona repeated. [`EVALUATION.md`](EVALUATION.md) is the pre-registered protocol for that study: 12 papers, 120 seeded errors across the twelve review domains, three arms (persona panel, repeated generic reviewer, repeated strongest specialist), blind scoring, shared blind spot rate and per-domain recall as named outcomes. It is written so the diversity claim can fail, and a null result will amend this README where the claim is made.
+
 ## Repository map
 
 ```
 README.md                    This file
 PROTOCOL.md                  The full multi-agent peer review protocol, gates 0 to 6
+EVALUATION.md                Seeded-error study protocol: persona panel vs repeated single persona, matched model and budget
 PERSONA_SELECTION.md         Experience buckets, persona cards, per-article panel matrix
 prompts/                     Orchestrator, selector, reviewer, editor, re-review, integrity prompts
 templates/                   Reviewer report, editorial decision, response matrix, gate log, panel sheet
