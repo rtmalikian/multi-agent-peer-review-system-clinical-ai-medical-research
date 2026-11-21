@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission | Methods Papers</title>
+<link rel="canonical" href="https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/">
+<meta name="description" content="Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission. Persona-based AI peer reviewers and looped editorial gates before preprint submission By Raphael Malikian.">
+<meta name="citation_title" content="Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission">
+<meta name="citation_author" content="Malikian, Raphael">
+<meta name="citation_publication_date" content="2026/11/05">
+
+
+<meta name="citation_publisher" content="Zenodo">
+<meta name="citation_language" content="en">
+<meta name="citation_keyword" content="peer review">
+<meta name="citation_keyword" content="multi-agent">
+<meta name="citation_keyword" content="ai peer review">
+<meta name="citation_keyword" content="llm">
+<meta name="citation_keyword" content="clinical ai">
+<meta name="citation_keyword" content="medical research">
+<meta name="citation_keyword" content="manuscript review">
+<meta name="citation_keyword" content="research integrity">
+<meta name="citation_keyword" content="reproducibility">
+<meta name="citation_keyword" content="preprint">
+<meta name="DC.title" content="Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission">
+<meta name="DC.creator" content="Raphael Malikian">
+<meta name="DC.date" content="2026-11-05">
+<meta name="DC.identifier" content="https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/">
+<meta name="DC.type" content="Text">
+<meta name="DC.rights" content="Malikian Attribution — Non-Commercial Licence v1.0">
+<meta property="og:title" content="Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/">
+<meta name="twitter:card" content="summary">
+<style>
+:root{--navy:#14406e;--navy2:#1d5aa8;--ink:#1a1a1a;--mut:#5c6670;--line:#d9dee4;
+--rule:#9aa7b4;--panel:#f7f9fb;--boxbg:#fbfbf8}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:#fff;line-height:1.6}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+a{color:var(--navy2)}
+/* --- journal masthead --- */
+.masthead{border-top:5px solid var(--navy);border-bottom:1px solid var(--ink);padding:20px 0 14px}
+.wordmark{font-size:37px;font-weight:bold;letter-spacing:.01em;color:#0e2a47;line-height:1.05}
+.mast-sub{font-family:Helvetica,Arial,sans-serif;font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--mut);margin-top:5px}
+.journalnav{border-bottom:1px solid var(--line)}
+.journalnav .wrap{display:flex;gap:26px;padding-top:8px;padding-bottom:8px}
+.journalnav a{font-family:Helvetica,Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.06em;text-transform:uppercase;color:#24313d;text-decoration:none}
+.journalnav a:hover{color:var(--navy2);text-decoration:underline}
+/* --- breadcrumb / type --- */
+.crumb{font-family:Helvetica,Arial,sans-serif;font-size:12.5px;color:var(--mut);margin:18px 0 0}
+.crumb a{color:var(--mut);text-decoration:none} .crumb a:hover{text-decoration:underline}
+.typerow{display:flex;align-items:center;gap:12px;margin:10px 0 0;flex-wrap:wrap}
+.arttype{font-family:Helvetica,Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.13em;text-transform:uppercase;color:var(--navy)}
+.oa{font-family:Helvetica,Arial,sans-serif;font-size:11.5px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;color:#14632d;border:1px solid #14632d;border-radius:3px;padding:2px 8px}
+/* --- article header --- */
+.article-head{border-bottom:2px solid var(--ink);padding-bottom:16px}
+h1{font-size:33px;line-height:1.22;margin:14px 0 8px;color:#101c28;font-weight:bold}
+.standfirst{font-size:17.5px;color:#3c4753;margin:0 0 18px}
+.authors{font-size:17px;margin:0 0 3px}
+.authors sup{font-size:11px}
+.affil{font-size:14px;color:#3c4753;margin:0 0 3px}
+.corr{font-size:14px;color:#3c4753;margin:0 0 12px}
+.publine{font-family:Helvetica,Arial,sans-serif;font-size:13.5px;color:#24313d;margin:0 0 5px}
+.citeline{font-size:14.5px;color:#24313d;margin:0}
+/* --- action row --- */
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 4px}
+.actions a,.actions button{font-family:Helvetica,Arial,sans-serif;font-size:13.5px;font-weight:bold;text-decoration:none;border:1px solid var(--navy);border-radius:3px;padding:8px 16px;color:var(--navy);background:#fff;cursor:pointer}
+.actions a.primary{background:var(--navy);color:#fff}
+.actions a:hover,.actions button:hover{background:#e8eef5}
+.actions a.primary:hover{background:var(--navy2)}
+/* --- layout --- */
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;margin-top:22px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+/* --- article body --- */
+article h2{font-size:21px;color:#101c28;border-bottom:1px solid var(--rule);padding-bottom:5px;margin:36px 0 12px}
+article h2 .secno{color:var(--navy)}
+article h3{font-size:17px;color:#101c28;margin:26px 0 8px}
+article h4{font-size:15px;color:#101c28;margin:20px 0 6px}
+article p{margin:0 0 11px}
+article table{border-collapse:collapse;width:100%;font-size:13px;margin:16px 0;line-height:1.45}
+article th{background:none;color:var(--ink);text-align:left;font-weight:bold;padding:6px 8px;border-top:2.5px solid #101c28;border-bottom:1px solid #101c28}
+article td{border:none;padding:5px 8px;vertical-align:top}
+article tbody tr:last-child td{border-bottom:2.5px solid #101c28}
+article figure{margin:22px 0}
+article figure img{max-width:100%;border:1px solid var(--line)}
+article figcaption{font-size:13.5px;color:#24313d;margin-top:7px;font-family:Helvetica,Arial,sans-serif;line-height:1.5}
+.abstract-panel{background:var(--panel);border:1px solid var(--line);padding:16px 22px 8px;margin:4px 0 10px}
+.abstract-panel h2{border:none;font-size:14px;letter-spacing:.13em;text-transform:uppercase;color:var(--navy);margin:0 0 10px;padding:0;font-family:Helvetica,Arial,sans-serif}
+.keyfindings{background:var(--boxbg);border:1px solid var(--line);border-top:3px solid var(--navy);padding:13px 20px 5px;margin:20px 0}
+.keyfindings h2{border:none;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin:0 0 8px;padding:0;font-family:Helvetica,Arial,sans-serif}
+.keyfindings ul{margin:4px 0 10px;padding-left:20px} .keyfindings li{margin-bottom:6px}
+ol.refs{padding-left:0;list-style-position:outside;margin-left:2.1em}
+ol.refs li{margin-bottom:7px;padding-left:.4em}
+/* --- sidebar rail --- */
+aside .box{border:1px solid var(--line);background:#fff;padding:14px 16px;margin-bottom:18px}
+aside h3{margin:0 0 9px;font-size:13px;font-family:Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.07em;color:var(--navy);border-bottom:1px solid var(--line);padding-bottom:6px}
+aside p,aside li{font-size:13.5px}
+aside ul{margin:6px 0;padding-left:18px}
+aside ul.contents{list-style:none;padding-left:0} aside ul.contents li{margin-bottom:5px}
+aside ul.contents a{color:#24313d;text-decoration:none} aside ul.contents a:hover{text-decoration:underline;color:var(--navy2)}
+.dl a.btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:10px;border-radius:3px;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-weight:bold;margin-bottom:8px}
+.dl a.btn:hover{background:var(--navy2)}
+.dl a.alt{background:#fff;color:var(--navy);border:1px solid var(--navy);font-weight:normal}
+.dl p{color:var(--mut);margin:6px 0 0}
+pre{white-space:pre-wrap;font-size:11px;background:#f6f4ef;padding:8px;line-height:1.4}
+button.copy{font-size:12px;cursor:pointer}
+/* --- footer --- */
+footer{border-top:2px solid var(--ink);margin-top:44px;padding:16px 0 36px;font-size:13.5px;color:#3c4753}
+footer .seriesline{font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--mut);margin-top:10px}
+@media print{
+ .masthead .journalnav,.crumb,.actions,aside,button.copy{display:none}
+ .grid{grid-template-columns:1fr}
+ body{font-size:11pt;line-height:1.5} a{color:#000;text-decoration:none}
+ article h2{break-after:avoid} article table,article figure{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="masthead"><div class="wrap">
+<div class="wordmark">Methods Papers</div>
+<div class="mast-sub">Raphael Malikian · Cochrane-Level Evidence Syntheses</div>
+</div></div>
+<nav class="journalnav"><div class="wrap">
+<a href="https://rtmalikian.github.io/systematic-reviews/#reviews">Browse</a>
+<a href="https://rtmalikian.github.io/systematic-reviews/#method">About</a>
+<a href="https://rtmalikian.github.io/systematic-reviews/">Systematic Reviews Hub</a>
+<a href="https://github.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research">GitHub</a>
+</div></nav>
+<div class="wrap">
+<p class="crumb"><a href="https://rtmalikian.github.io/systematic-reviews/">Systematic Reviews Hub</a> &rsaquo; Research Methods &rsaquo; Methods Paper</p>
+<div class="typerow"><span class="arttype">Methods Paper</span><span class="oa">Open Access</span></div>
+<header class="article-head">
+<h1>Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission</h1>
+<p class="standfirst">Persona-based AI peer reviewers and looped editorial gates before preprint submission</p>
+<p class="authors"><strong>Raphael Malikian</strong><sup>1</sup></p>
+<p class="affil"><sup>1</sup> Independent Researcher, Palmdale, CA, USA</p>
+<p class="corr">Corresponding author: Raphael Malikian, <a href="mailto:rtmalikian@gmail.com">rtmalikian@gmail.com</a> · ORCID <a href="https://orcid.org/0009-0008-4326-4205">0009-0008-4326-4205</a></p>
+<p class="publine">Published: 5 November 2026 &middot; Version 1.0.0</p>
+<p class="citeline">Malikian R. Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission. Version 1.0.0; 2026. Available at: <a href="https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/">https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/</a></p>
+</header>
+<div class="actions">
+<a class="primary" href="https://github.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research">View on GitHub</a>
+<button type="button" onclick="window.print()">Print</button>
+<a href="#cite">Cite</a>
+<a href="https://twitter.com/intent/tweet?text=Multi-Agent%20Peer%20Review%20System%20for%20Clinical%20AI,%20Medical%20Research%20and%20Health%20Technology%20Papers:%20persona-based%20AI%20reviewers%20and%20looped%20editorial%20gates%20before%20preprint%20submission&url=https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/" target="_blank" rel="noopener">Share</a>
+</div>
+<div class="grid">
+<article>
+<section class="abstract-panel">
+<h2 id="abstract">Abstract</h2>
+<p>Before any article is submitted for preprint posting or sent to a journal, a panel of AI sub-agents reviews it. Each agent carries a different critical persona and experience bucket, chosen for that specific article: domain clinician, methodologist, biostatistician, technology specialist, patient reviewer, ethics reviewer, reporting editor, and a sceptic briefed to argue against the headline claim. The paper loops through editorial synthesis, revision and re-review until no Blocker and no Major comment remains open, then passes a final integrity gate that verifies citations and traces every headline number to the dataset. This repository publishes the full system: the looped-gates protocol (Gates 0–6), the persona-selection method, and an evaluation framework. It is pre-submission peer review, never journal peer review.</p>
+</section>
+<h3 id="persona-based-ai-peer-reviewers-looped-editorial-gates-no-paper-reaches-a-preprint-server-until-it-has-survived-review">Persona-based AI peer reviewers. Looped editorial gates. No paper reaches a preprint server until it has survived review.</h3>
+<p><a href="LICENSE.md"><img alt="Licence: Attribution, Non-Commercial" src="https://img.shields.io/badge/Licence-Attribution--NonCommercial-orange" /></a>
+<a href="#the-looped-gates"><img alt="Process: Looped gates, not a single pass" src="https://img.shields.io/badge/Process-Looped%20gates-brightgreen" /></a>
+<a href="https://github.com/rtmalikian/multi-agent-cochrane-level-review-process"><img alt="Companion: Cochrane-level review process" src="https://img.shields.io/badge/Companion-Cochrane--level%20review%20process-blue" /></a></p>
+<p><strong>By Raphael Malikian</strong>, independent researcher, healthcare founder and operator who bootstrapped and ran a direct primary care clinic as CEO, now building clinical AI. ORCID <a href="https://orcid.org/0009-0008-4326-4205">0009-0008-4326-4205</a> · rtmalikian@gmail.com · GitHub <a href="https://github.com/rtmalikian">@rtmalikian</a> · X <a href="https://x.com/rtmalikian">@rtmalikian</a></p>
+<hr />
+<h2 id="what-this-is">What this is</h2>
+<p>A complete, reusable <strong>multi-agent peer review system</strong> for research papers, systematic reviews, meta-analyses, clinical AI papers, digital health studies, health technology assessments and scholarly commentaries.</p>
+<p>Before any article is submitted for preprint posting (Zenodo, arXiv or any other server) or sent to a journal, a panel of AI sub-agents reviews it. Each agent carries a <strong>different critical persona and a different experience bucket</strong>, chosen for that specific article. A clinician does not review a statistics problem the way a biostatistician does, and a patient reviewer does not read a workflow claim the way an implementation scientist does. This system builds that difference in on purpose, then forces the paper through <strong>looped editorial gates</strong> until every major criticism has been answered in the text, fixed in the data, or recorded as an honest limitation.</p>
+<p>It is the pre-submission peer review layer for a weekly research publication series in clinical AI, and a companion to the open <a href="https://github.com/rtmalikian/multi-agent-cochrane-level-review-process">Multi-Agent Cochrane-Level Review Process</a>, which covers how a review is <em>produced</em>. This repository covers how a finished draft is <em>challenged</em> before anyone else sees it.</p>
+<blockquote>
+<p>Honesty note, built into the protocol itself: this is <strong>pre-submission peer review</strong>. It improves a paper before submission. It is never described, in any manuscript, post or cover letter, as journal peer review, and a paper that passes these gates is "internally peer reviewed before submission", nothing more. See Rule 1 in <a href="PROTOCOL.md"><code>PROTOCOL.md</code></a>.</p>
+</blockquote>
+<h2 id="why-a-panel-and-why-personas">Why a panel, and why personas</h2>
+<p>A single reviewer, human or AI, has a single blind spot pattern. Real journal peer review works, when it works, because editors send a paper to people who disagree about different things:</p>
+<ul>
+<li>The <strong>domain expert</strong> knows the literature cold and spots a missing citation, an outdated comparator or a claim the field settled two years ago.</li>
+<li>The <strong>methodologist</strong> reads the design before the results and asks whether the study could answer its own question at all.</li>
+<li>The <strong>biostatistician</strong> checks the numbers, the denominators, the model choice and the intervals, and does not care how good the story sounds.</li>
+<li>The <strong>clinician or operator</strong> asks whether the workflow described exists in a real clinic, at a real staffing level, on a real Tuesday.</li>
+<li>The <strong>patient and public reviewer</strong> asks who this helps, who it might harm, and whether the language respects the people in the data.</li>
+<li>The <strong>ethics and regulatory reviewer</strong> checks consent, privacy, data governance, conflicts and claims that go past the evidence.</li>
+<li>The <strong>reporting and reproducibility reviewer</strong> checks the checklist (PRISMA 2020, CONSORT, STROBE, STARD, TRIPOD+AI, CARE, as the study type requires), the data and code links, and whether a stranger could rebuild the result.</li>
+<li>The <strong>sceptic</strong> has one job: argue the strongest case against the paper's own headline claim, using only the paper's own evidence.</li>
+</ul>
+<p>Give all of those jobs to one generic "peer reviewer" prompt and you get one mild, averaged review. Give each job to a separate agent, in a separate session, with no sight of the other reviews, and you get the friction that makes peer review useful. That friction is the product.</p>
+<h2 id="persona-selection-is-per-article-never-fixed">Persona selection is per article, never fixed</h2>
+<p>There is no standing panel. For every paper, a <strong>Persona Selector</strong> agent reads the title, abstract, study type, methods, population, technology and target venue, then assigns 5 to 7 reviewers from the experience buckets in <a href="PERSONA_SELECTION.md"><code>PERSONA_SELECTION.md</code></a>, with a written reason for each pick and a written reason for any bucket it leaves out.</p>
+<p>Examples the protocol works through in full:</p>
+<table>
+<thead>
+<tr>
+<th>Article type</th>
+<th>Panel it gets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Systematic review and meta-analysis</td>
+<td>Evidence synthesis methodologist, biostatistician, domain clinician, information specialist, GRADE and reporting reviewer, sceptic</td>
+</tr>
+<tr>
+<td>Clinical AI model or imaging paper</td>
+<td>ML engineer, biostatistician, practising clinician in the specialty, patient safety reviewer, TRIPOD+AI reporting reviewer, sceptic</td>
+</tr>
+<tr>
+<td>Open-source contribution analysis</td>
+<td>Software engineer in the stack, health informatics researcher, reproducibility reviewer, domain clinician, sceptic</td>
+</tr>
+<tr>
+<td>Digital health intervention design</td>
+<td>Implementation scientist, clinician or operator, patient and public reviewer, ethics and privacy reviewer, health economist or service evaluator, sceptic</td>
+</tr>
+<tr>
+<td>Commentary or opinion</td>
+<td>Domain expert who is likely to disagree, policy or ethics reviewer, literature expert, patient and public reviewer, handling editor</td>
+</tr>
+<tr>
+<td>Education or community study</td>
+<td>Educator, community representative reviewer, methodologist, ethics reviewer, reporting reviewer</td>
+</tr>
+</tbody>
+</table>
+<p>Full matrix, persona cards and the selector prompt: <a href="PERSONA_SELECTION.md"><code>PERSONA_SELECTION.md</code></a> and <a href="prompts/01_persona_selector.md"><code>prompts/01_persona_selector.md</code></a>.</p>
+<h2 id="the-looped-gates">The looped gates</h2>
+<p>A paper cannot be submitted until it clears every gate, in order. A failed gate loops back. Nothing is waived by deadline pressure.</p>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Name</th>
+<th>What happens</th>
+<th>Fail means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Editorial triage</td>
+<td>Scope, venue fit, ethics flags, article type confirmed, materials complete (manuscript, dataset, figures, references)</td>
+<td>Paper returned before review starts</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Persona assignment</td>
+<td>Selector builds the panel for this article and records its reasoning</td>
+<td>Panel rebuilt, no review starts on a generic panel</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Independent review</td>
+<td>Each reviewer works alone, in a separate session, no sight of other reviews, structured report with severity-graded comments</td>
+<td>Any Blocker or unanswered Major stops the paper here</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Editorial synthesis</td>
+<td>A handling-editor agent merges the reviews, preserves disagreements, issues a decision: Accept, Minor revision, Major revision, or Reject and resubmit</td>
+<td>Decision is Major revision or worse: loop to Gate 4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Revision</td>
+<td>Author agent (or human author) answers every comment in a response matrix, changes the manuscript, the tables or the analysis, and logs every change</td>
+<td>A comment answered with words alone, where the text did not change, counts as unanswered</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Re-review</td>
+<td>The original reviewers who raised Major comments re-check only their own points against the revised draft</td>
+<td>Any Major still open loops back to Gate 4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Final integrity gate</td>
+<td>Citations verified against sources, every number traced to the dataset snapshot, figures inspected page by page, declarations, conflicts and AI-assistance note checked, peer review statement worded honestly</td>
+<td>Any failed check loops back to Gate 4, however late it is found</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Loop rule:</strong> Gates 3 to 5 repeat until no Blocker and no Major remains open. If a paper reaches a third loop with a Major still unresolved, the system stops and escalates to the human author with the unresolved point stated plainly. It never passes a paper silently, and it never averages a Blocker away because the other reviewers were happy.</p>
+<p>Full gate definitions, severity taxonomy, decision rules and stop conditions: <a href="PROTOCOL.md"><code>PROTOCOL.md</code></a>.</p>
+<h2 id="what-a-comprehensive-peer-review-has-to-cover">What a comprehensive peer review has to cover</h2>
+<p>The protocol's review checklist, applied in full by the panel between them, covers:</p>
+<ol>
+<li><strong>Question and originality.</strong> Is the question worth asking, is it stated plainly, and what does this paper add to what is already published?</li>
+<li><strong>Literature position.</strong> Are the key prior papers cited, represented fairly, and engaged with, including papers that disagree?</li>
+<li><strong>Design and methods.</strong> Could this design answer this question? Are eligibility, sampling, comparators, outcomes and denominators fixed and reported?</li>
+<li><strong>Statistics and numbers.</strong> Model choice, intervals, heterogeneity, multiplicity, missing data, sensitivity analyses, and whether every number in the text matches the tables and the dataset.</li>
+<li><strong>Results and claims.</strong> Does every claim sit in the same paragraph as the evidence for it? Do the abstract and conclusions stay inside what the results support?</li>
+<li><strong>Bias and limitations.</strong> Selection, measurement, confounding, publication and author bias named specifically, with the direction each bias would push the result.</li>
+<li><strong>Ethics, privacy and safety.</strong> Consent and governance where people or patient data are involved, no individual clinical recommendations in a research paper, no claim of a licence or authority the author does not hold.</li>
+<li><strong>Reporting standards.</strong> The correct checklist for the study type, completed and checked against the manuscript, item by item.</li>
+<li><strong>Reproducibility.</strong> Data snapshot, code or extraction files, search strings, prompts and versions recorded well enough for a stranger to check the work.</li>
+<li><strong>Clarity and structure.</strong> A reader outside the specialty can follow the argument. Jargon explained. Tables and figures readable on their own.</li>
+<li><strong>Declarations.</strong> Funding, conflicts, contributions and a factual AI-assistance note present and accurate.</li>
+<li><strong>Venue fit.</strong> The paper matches the target journal or server in scope, format and audience, and the cover letter says nothing the paper does not support.</li>
+</ol>
+<h2 id="start-here">Start here</h2>
+<ol>
+<li>Read <a href="PROTOCOL.md"><code>PROTOCOL.md</code></a>, the full system.</li>
+<li>Run <a href="prompts/00_orchestrator.md"><code>prompts/00_orchestrator.md</code></a> on a finished draft. It walks the gates in order and refuses to skip one.</li>
+<li>Let <a href="prompts/01_persona_selector.md"><code>prompts/01_persona_selector.md</code></a> build the panel for that paper.</li>
+<li>Give each reviewer <a href="prompts/02_independent_reviewer.md"><code>prompts/02_independent_reviewer.md</code></a> with their persona card filled in.</li>
+<li>Synthesise with <a href="prompts/03_handling_editor.md"><code>prompts/03_handling_editor.md</code></a>, revise, re-review with <a href="prompts/04_rereview.md"><code>prompts/04_rereview.md</code></a>, and close with <a href="prompts/05_integrity_gate.md"><code>prompts/05_integrity_gate.md</code></a>.</li>
+<li>Keep the paperwork: blank forms are in <a href="templates/"><code>templates/</code></a>, and a filled-in worked example is in <a href="examples/WORKED_EXAMPLE.md"><code>examples/WORKED_EXAMPLE.md</code></a>.</li>
+</ol>
+<h2 id="how-this-is-used-in-practice">How this is used in practice</h2>
+<p>In the weekly research publication series this system was built for, the gates sit <strong>between the finished draft and every external step</strong>. No Zenodo deposit, no journal submission, no arXiv posting and no conference abstract leaves until the Gate 6 sign-off is logged in the paper's own folder, alongside the reviews, the response matrix and the panel assignment sheet. The peer review record for each paper is kept with the paper, and the manuscript's declarations carry a short, honest statement that the draft received multi-agent pre-submission peer review under this protocol, with the human author accountable for the final text.</p>
+<h2 id="is-persona-diversity-actually-better-the-test">Is persona diversity actually better? The test</h2>
+<p>Honest answer: not yet tested. The claim that varied personas beat repeated reviews from one persona is this system's central hypothesis, and a public comment on launch day put the right challenge: papers with seeded errors, the same model, the same budget, a persona panel against one persona repeated. <a href="EVALUATION.md"><code>EVALUATION.md</code></a> is the pre-registered protocol for that study: 12 papers, 120 seeded errors across the twelve review domains, three arms (persona panel, repeated generic reviewer, repeated strongest specialist), blind scoring, shared blind spot rate and per-domain recall as named outcomes. It is written so the diversity claim can fail, and a null result will amend this README where the claim is made.</p>
+<h2 id="repository-map">Repository map</h2>
+<p><code>README.md                    This file
+PROTOCOL.md                  The full multi-agent peer review protocol, gates 0 to 6
+EVALUATION.md                Seeded-error study protocol: persona panel vs repeated single persona, matched model and budget
+PERSONA_SELECTION.md         Experience buckets, persona cards, per-article panel matrix
+prompts/                     Orchestrator, selector, reviewer, editor, re-review, integrity prompts
+templates/                   Reviewer report, editorial decision, response matrix, gate log, panel sheet
+examples/WORKED_EXAMPLE.md   One paper taken through every gate, with its panel and its loops
+docs/                        GitHub Pages landing page
+CITATION.cff                 Cite this system
+LICENSE.md                   Malikian Attribution, Non-Commercial Licence v1.0</code></p>
+<h2 id="licence">Licence</h2>
+<p>Free for non-profit, academic, personal and other non-commercial use, with prominent acknowledgement and a link back to this repository. Commercial use requires a licence by email. Full terms: <a href="LICENSE.md"><code>LICENSE.md</code></a>.</p>
+<p>Suggested acknowledgement:</p>
+<blockquote>
+<p>Pre-submission peer review process: Malikian R. Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers. 2026. https://github.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research</p>
+</blockquote>
+<h2 id="how-to-cite">How to cite</h2>
+<p>Malikian R. Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission. 2026. GitHub: https://github.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research · ORCID: 0009-0008-4326-4205</p>
+<h2 id="author-and-collaboration">Author and collaboration</h2>
+<p>Raphael Malikian · rtmalikian@gmail.com · <a href="https://github.com/rtmalikian">GitHub</a> · <a href="https://www.linkedin.com/in/raphael-t-malikian-mbbs-bsc-hons-71075436a/">LinkedIn</a> · <a href="https://x.com/rtmalikian">X</a></p>
+<p>Open to collaboration on clinical AI research, evidence synthesis and research publishing infrastructure. Open an issue to discuss a paper type the panel matrix does not cover yet, or a reporting checklist that should be added to Gate 6.</p>
+<h2 id="keywords">Keywords</h2>
+<p>multi-agent peer review, AI peer review, automated peer review, LLM peer reviewers, pre-submission peer review, manuscript peer review system, clinical AI research, medical research publishing, systematic review peer review, meta-analysis quality, persona-based AI agents, editorial gates, research integrity, reproducibility, PRISMA 2020, TRIPOD+AI, GRADE, preprint submission, Zenodo, scholarly publishing</p>
+</article>
+<aside>
+<div class="box dl">
+<h3>Download</h3>
+<a class="btn" href="https://github.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research">View full text on GitHub</a>
+<a class="btn alt" href="https://github.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research/blob/main/PROTOCOL.md">Full protocol, Gates 0–6 (PROTOCOL.md)</a><a class="btn alt" href="https://github.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research/blob/main/PERSONA_SELECTION.md">Persona selection (PERSONA_SELECTION.md)</a><a class="btn alt" href="https://github.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research/blob/main/EVALUATION.md">Evaluation (EVALUATION.md)</a><a class="btn alt" href="https://raw.githubusercontent.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research/main/README.md">Markdown source (README)</a>
+<p>One click — no sign-up, no paywall.</p>
+</div>
+<div class="box" id="cite">
+<h3>Cite this article</h3>
+<p>Malikian R. Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission. Version 1.0.0; 2026. Available at: https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/</p>
+<p><strong>BibTeX</strong> <button class="copy" onclick="navigator.clipboard.writeText(document.getElementById('bib').innerText)">Copy</button></p>
+<pre id="bib">@misc{malikian2026peerreview,
+  author       = {Malikian, Raphael},
+  title        = {Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission},
+  year         = {2026},
+  publisher    = {Zenodo},
+  url          = {https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/},
+  note         = {Multi-agent peer review system for clinical AI and medical research papers}
+}</pre>
+<p><strong>RIS</strong> <button class="copy" onclick="navigator.clipboard.writeText(document.getElementById('ris').innerText)">Copy</button></p>
+<pre id="ris">TY  - GEN
+AU  - Malikian, Raphael
+TI  - Multi-Agent Peer Review System for Clinical AI, Medical Research and Health Technology Papers: persona-based AI reviewers and looped editorial gates before preprint submission
+PY  - 2026
+UR  - https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/
+ER  -</pre>
+</div>
+<div class="box">
+<h3>Article information</h3>
+<p>Released: 5 November 2026 (Version 1.0.0, per CITATION.cff). No DOI has been issued for this work; none is claimed.</p><p>Funding: none. Conflicts of interest: none.</p><p>Correspondence: Raphael Malikian, <a href="mailto:rtmalikian@gmail.com">rtmalikian@gmail.com</a>, Palmdale, CA, USA. ORCID <a href="https://orcid.org/0009-0008-4326-4205">0009-0008-4326-4205</a>.</p><p>Honesty note: this is pre-submission peer review. A paper that passes these gates is internally peer reviewed before submission, nothing more.</p>
+</div>
+<div class="box">
+<h3>Contents</h3>
+<ul class="contents"><li><a href="#abstract">Abstract</a></li><li><a href="#what-this-is">What this is</a></li><li><a href="#why-a-panel-and-why-personas">Why a panel, and why personas</a></li><li><a href="#persona-selection-is-per-article-never-fixed">Persona selection is per article, never fixed</a></li><li><a href="#the-looped-gates">The looped gates</a></li><li><a href="#what-a-comprehensive-peer-review-has-to-cover">What a comprehensive peer review has to cover</a></li><li><a href="#start-here">Start here</a></li><li><a href="#how-this-is-used-in-practice">How this is used in practice</a></li><li><a href="#is-persona-diversity-actually-better-the-test">Is persona diversity actually better? The test</a></li><li><a href="#repository-map">Repository map</a></li><li><a href="#licence">Licence</a></li><li><a href="#how-to-cite">How to cite</a></li><li><a href="#author-and-collaboration">Author and collaboration</a></li><li><a href="#keywords">Keywords</a></li></ul>
+</div>
+<div class="box">
+<h3>Keywords</h3>
+<ul><li>peer review</li><li>multi-agent</li><li>ai peer review</li><li>llm</li><li>clinical ai</li><li>medical research</li><li>manuscript review</li><li>research integrity</li><li>reproducibility</li><li>preprint</li></ul>
+</div>
+<div class="box">
+<h3>Links</h3>
+<ul>
+<li><a href="https://github.com/rtmalikian/multi-agent-peer-review-system-clinical-ai-medical-research">GitHub repository</a></li>
+
+<li><a href="https://rtmalikian.github.io/systematic-reviews/">Systematic reviews hub</a></li>
+<li><a href="https://orcid.org/0009-0008-4326-4205">ORCID</a></li>
+</ul>
+</div>
+</aside>
+</div>
+<footer>
+<p>This is an open access article distributed under the terms of the Malikian Attribution — Non-Commercial Licence v1.0, which permits use, distribution, and reproduction in any medium, provided the original author and source are credited.</p>
+<p>© 2026 Raphael Malikian. Available at: <a href="https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/">https://rtmalikian.github.io/multi-agent-peer-review-system-clinical-ai-medical-research/</a></p>
+<p class="seriesline">Methods Papers — Raphael Malikian · Cochrane-Level Evidence Syntheses</p>
+</footer>
+</div>
+</body>
+</html>
